@@ -11,9 +11,16 @@ bs4 = "*"
 scikit-learn = "*"
 matplotlib = "*"
 seaborn = "*"
+python-dotenv = "*"
+fredapi = "*"
+alpaca-py = "*"
+yfinance = "*"
+psycopg2 = "*"
+pyyaml = "*"
 
 [dev-packages]
 jupyter = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.12"
