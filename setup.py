@@ -8,5 +8,10 @@ setup(
     description='Trading and Finance Project',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    packages=find_packages()
+    packages=find_packages(include=["trading", "trading.*"]),
+    install_requires=[
+        "numpy", 
+        "pandas",
+        "psycopg2"
+    ],
 )
