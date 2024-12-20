@@ -25,7 +25,8 @@ setup(
         "fredapi",
         "alpaca-py",
         "bs4",
-        "luigi"
+        "luigi",
+        "python-dotenv"
     ],
     entry_points={
         "console_scripts": [
