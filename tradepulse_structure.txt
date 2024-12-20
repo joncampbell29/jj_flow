@@ -1,0 +1,37 @@
+
+Tradepulse/ # project root/ repo directory
+   -config/
+      --api_keys.yaml # api keys and secrets
+      --db_config.yaml # database configuration
+      --logging_config.yaml # logging configuration
+   -logs/ # log files
+   -models/ # model storage
+   -notebooks/ # notebooks for exploration
+   -pipelines/ # pipeline folder
+      --data_pipeline/ # data management pipeline
+         ---tasks/
+            ----fetch_data.py # fetch data from other source
+            ----store_data.py # store data in database
+	    ----retrieve_data.py # get data from database
+         ---pipeline.py # run data pipeline
+      --model_pipeline/ # model inference pipeline
+         ---tasks/
+	    ----preprocess_data.py # pull and preprocess data
+            ----load_model.py # load in trained models
+            ----inference.py # run inference
+	 ---pipeline.py # run model pipeline
+   -scripts/ # scripts to run whole pipeline, train models and run inference
+      --run_pipeline.py
+      --train_models.py
+   -src/ # utility functions
+      --data_fetching/
+      --database/
+      --preprocessing/
+   -tests/ # unit tests
+      --db_tests.py # database tests
+      --data_pipeline.py # data pipeline tests
+      --model_pipeline.py # model pipeline tests
+   -.gitignore
+   -Pipfile # dependency management
+   -README.md #project overview
+   -setup.py # project unility function setup
