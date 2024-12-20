@@ -9,18 +9,20 @@ pandas = "*"
 numpy = "*"
 bs4 = "*"
 scikit-learn = "*"
-matplotlib = "*"
-seaborn = "*"
 python-dotenv = "*"
 fredapi = "*"
 alpaca-py = "*"
 yfinance = "*"
 psycopg2 = "*"
 pyyaml = "*"
+trading = {file = ".", editable = true}
 
 [dev-packages]
 jupyter = "*"
 pytest = "*"
+seaborn = "*"
+matplotlib = "*"
+ipykernel = "*"
 
 [requires]
 python_version = "3.12"
