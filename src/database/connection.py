@@ -3,9 +3,12 @@ from psycopg2.pool import SimpleConnectionPool
 from .config import get_db_config
 
 class DatabaseManager:
-    def __init__(self, db_config_yaml_path):
+    def __init__(self, db_config_yaml_path: str=None, db_config: dict=None):
         self.pool = None
-        self.db_config = get_db_config(db_config_yaml_path)
+        if db_config:
+            self.db_config = db_config
+        else:
+            self.db_config = get_db_config(db_config_yaml_path)
         
     def initiate_pool(self, minconn=1, maxconn=10):
         if not self.pool:
@@ -41,3 +44,50 @@ class DatabaseManager:
             return True
         except Exception as e:
             return False
+        
+    def get_table_dim(self, conn, tablename):
+        query = f'''
+            SELECT 
+            (SELECT COUNT(*) FROM {tablename}) AS row_count,
+            (SELECT COUNT(column_name) 
+            FROM information_schema.columns 
+            WHERE table_name = '{tablename}') AS column_count;
+        '''
+        with conn.cursor() as cur:
+            cur.execute(query)
+            data = cur.fetchall()
+        return data
+        
+    def get_colnames(self, conn, tablename):
+        query = f'''
+            SELECT column_name
+            FROM information_schema.columns
+            WHERE table_name = '{tablename}';
+        '''
+        with conn.cursor() as cur:
+            cur.execute(query)
+            data = cur.fetchall()
+        return data
+        
+    def get_tables(self, conn):
+        query = '''
+            SELECT table_name
+            FROM information_schema.tables
+            WHERE table_schema = 'public';
+        '''
+        with conn.cursor() as cur:
+            cur.execute(query)
+            data = cur.fetchall()
+        return data
+    
+    def get_table_structure(self, conn, tablename):
+        query = f'''
+            SELECT column_name, data_type, character_maximum_length
+            FROM information_schema.columns
+            WHERE table_name = '{tablename}';
+        '''
+        with conn.cursor() as cur:
+            cur.execute(query)
+            data = cur.fetchall()
+        return data
+        
