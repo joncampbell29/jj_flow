@@ -1,4 +1,4 @@
-from utils.env_utils import load_root_env
+from utils.env_utils import _load_root_env
 import os
 # load_root_env()
 

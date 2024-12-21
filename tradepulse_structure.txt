@@ -27,6 +27,8 @@ Tradepulse/ # project root/ repo directory
       --data_fetching/
       --database/
       --preprocessing/
+      --utils/
+         --env_utils.py
    -tests/ # unit tests
       --db_tests.py # database tests
       --data_pipeline.py # data pipeline tests

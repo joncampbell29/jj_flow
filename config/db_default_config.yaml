@@ -1,0 +1,4 @@
+default:
+  host: localhost
+  port: 5432
+  dbname: tradepulse_db

@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-def get_proj_root():
+def _get_proj_root():
     cur_path = os.path.dirname(__file__)
     while True:
         if ".env" in os.listdir(cur_path):
@@ -11,12 +11,7 @@ def get_proj_root():
             raise FileNotFoundError(".env file not found in any parent directory")
         cur_path = parent
 
-def load_root_env():
-    proj_root = get_proj_root()
+def _load_root_env():
+    proj_root = _get_proj_root()
     env_path = os.path.join(proj_root,".env")
     load_dotenv(dotenv_path=env_path)
-    print(f".env loaded from {env_path}")
-
-# if __name__ == "__main__":
-#     load_root_env()
-
