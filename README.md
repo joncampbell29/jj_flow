@@ -1,5 +1,15 @@
 # TradePulse
 
+## External sources and usage:
+- EDGAR: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+  - Company facts and SEC filings
+- Alpaca Market Data API: https://docs.alpaca.markets/docs/about-market-data-api
+  - Historical stock price data
+  - (maybe some other things from other endpoints)
+
+
+
+
 ## Repository Structure: Tradepulse
 
 Below is an overview of the directory structure for the **Tradepulse** project.
