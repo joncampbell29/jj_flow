@@ -15,7 +15,6 @@ alpaca-py = "*"
 yfinance = "*"
 psycopg2 = "*"
 pyyaml = "*"
-luigi = "*"
 tradepulse-utils = {file = ".", editable = true}
 
 [dev-packages]
