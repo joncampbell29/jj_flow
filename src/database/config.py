@@ -1,7 +1,6 @@
 from utils.env_utils import _load_root_env, _get_proj_root
 import os
 import yaml
-# import typing
 
 def get_db_config(db_config_yaml_path:str=None)->dict[str, str]:
     """

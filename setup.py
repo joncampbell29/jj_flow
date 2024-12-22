@@ -7,7 +7,7 @@ with open('requirements.txt', "r") as f:
     reqs = f.read().splitlines()
 
 setup(
-    name='tradepulse_utils',
+    name='jjflow_utils',
     version='0.1.0',
     author='Jon Campbell',
     author_email='campbelljonjr@comcast.net',
@@ -19,8 +19,8 @@ setup(
     install_requires=reqs,
     entry_points={
         "console_scripts": [
-            "tradepulse-run=scripts.run_pipeline:main",
-            "tradepulse-train=scripts.train_models:main",
+            "jjflow-run=scripts.run_pipeline:main",
+            "jjflow-train=scripts.train_models:main",
         ]
     }
 )

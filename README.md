@@ -1,4 +1,4 @@
-# TradePulse
+# JJ Flow
 
 This project implements a robust two-pipeline system designed to streamline financial data ingestion, storage, and predictive modeling for making informed investment decisions. The repository includes utilities and scripts for managing the entire workflow, from fetching external data to generating predictions.
 

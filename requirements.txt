@@ -9,5 +9,4 @@ python-dotenv
 fredapi
 alpaca-py
 bs4
-luigi
 python-dotenv
