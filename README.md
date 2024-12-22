@@ -1,5 +1,25 @@
 # TradePulse
 
+This project implements a robust two-pipeline system designed to streamline financial data ingestion, storage, and predictive modeling for making informed investment decisions. The repository includes utilities and scripts for managing the entire workflow, from fetching external data to generating predictions.
+
+---
+
+## Overview
+
+The project is divided into two main pipelines:
+
+### 1. **Data Pipeline**
+- Fetches financial data from external sources (e.g., APIs, CSV files).
+- Processes and transforms the raw data into a structured format.
+- Stores the cleaned data in a **PostgreSQL database** for efficient querying and analysis.
+
+### 2. **Model Pipeline**
+- Pulls data from the PostgreSQL database for preprocessing.
+- Trains predictive models using the preprocessed financial data.
+- Generates predictions to assist in making investment decisions.
+
+---
+
 ## External sources and usage:
 - EDGAR: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
   - Company facts and SEC filings
@@ -7,12 +27,11 @@
   - Historical stock price data
   - (maybe some other things from other endpoints)
 
+---
 
+## Project Structure
 
-
-## Repository Structure: Tradepulse
-
-Below is an overview of the directory structure for the **Tradepulse** project.
+The repository is organized as follows:
 
 ### Project Root
 
