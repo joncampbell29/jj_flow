@@ -1,0 +1,13 @@
+numpy 
+pandas
+psycopg2
+requests
+yfinance
+pyyaml
+scikit-learn
+python-dotenv
+fredapi
+alpaca-py
+bs4
+luigi
+python-dotenv

@@ -1,0 +1,38 @@
+Function Template
+------------------
+"""
+Function Description.
+    
+Parameters
+----------
+param1: param1_type
+    param1 description
+param2: param2_type
+    param2 description
+
+Returns
+-------
+return_type
+    Return description.
+"""
+
+
+Class Template
+------------------
+"""
+Class Description.
+
+Attributes
+----------
+    attr1 : attr1_type
+        attr1 description.
+    attr2 : attr2_type
+        attr2 description.
+
+Methods
+-------
+method1()
+    method1 description.
+method2()
+    method2 description.
+"""

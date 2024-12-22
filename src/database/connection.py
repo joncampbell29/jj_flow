@@ -3,6 +3,52 @@ from psycopg2.pool import SimpleConnectionPool
 from .config import get_db_config
 
 class DatabaseManager:
+    """
+    A class to manage database connections and operations using a connection pool.
+
+    Simplifies interactions with a PostgreSQL database by providing
+    methods to initialize a connection pool, connect to the database, and perform
+    common database operations such as querying table dimensions, column names, 
+    and table structures.
+
+    Attributes
+    ----------
+    db_config : dict
+        The configuration parameters for the database connection.
+    pool : psycopg2.pool.SimpleConnectionPool
+        The connection pool used to manage database connections.
+
+    Methods
+    -------
+    initiate_pool(minconn=1, maxconn=10)
+        Initializes a connection pool with the given minimum and maximum connections.
+    
+    connect_to_db()
+        Retrieves a database connection from the connection pool.
+    
+    release_connection(conn)
+        Releases a database connection back to the connection pool.
+    
+    close_pool()
+        Closes all connections in the connection pool.
+    
+    test_connection()
+        Tests if a connection to the database can be established.
+    
+    get_table_dim(conn, tablename)
+        Retrieves the number of rows and columns in a table.
+    
+    get_colnames(conn, tablename)
+        Retrieves the column names of a specified table.
+    
+    get_tables(conn)
+        Retrieves a list of all tables in the public schema of the database.
+    
+    get_table_structure(conn, tablename)
+        Retrieves the structure of a specified table, including column names, 
+        data types, and maximum character lengths.
+    """
+    
     def __init__(self, db_config_yaml_path: str=None, db_config: dict=None):
         self.pool = None
         if db_config:

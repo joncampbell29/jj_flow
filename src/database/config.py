@@ -1,8 +1,22 @@
 from utils.env_utils import _load_root_env, _get_proj_root
 import os
 import yaml
+# import typing
 
-def get_db_config(db_config_yaml_path=None):
+def get_db_config(db_config_yaml_path:str=None)->dict[str, str]:
+    """
+    Get the database configuration from the environment variables or a YAML file.
+    
+    Parameters
+    ----------
+    db_config_yaml_path : str, optional
+        The path to the YAML file containing the database configuration. If not provided, the default path  from database.config._get_proj_root is used.
+
+    Returns
+    -------
+    Dict
+        A dictionary containing the database configuration.
+    """
     root_dir = _get_proj_root()
     _load_root_env()
     try:

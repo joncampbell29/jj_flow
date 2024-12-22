@@ -2,6 +2,9 @@ from setuptools import setup, find_packages
 
 with open('README.md', "r") as f:
     desc = f.read()
+    
+with open('requirements.txt', "r") as f:
+    reqs = f.read().splitlines()
 
 setup(
     name='tradepulse_utils',
@@ -13,21 +16,7 @@ setup(
     long_description_content_type='text/markdown',
     packages=find_packages(where='src'),
     package_dir={"": "src"},
-    install_requires=[
-        "numpy", 
-        "pandas",
-        "psycopg2",
-        "requests",
-        "yfinance",
-        "pyyaml",
-        "scikit-learn",
-        "python-dotenv",
-        "fredapi",
-        "alpaca-py",
-        "bs4",
-        "luigi",
-        "python-dotenv"
-    ],
+    install_requires=reqs,
     entry_points={
         "console_scripts": [
             "tradepulse-run=scripts.run_pipeline:main",
