@@ -90,4 +90,3 @@ class DatabaseManager:
             cur.execute(query)
             data = cur.fetchall()
         return data
-        

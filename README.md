@@ -76,6 +76,7 @@ Below is an overview of the directory structure for the **Tradepulse** project.
   - `models/` — Model management and manipulatino utilities.
   - `utils/`
     - `env_utils.py` — Handles environment variables and project root utilities.
+    - `date_utils.py` - Handles manipulating dates and datetime objects.
 
 ---
 
