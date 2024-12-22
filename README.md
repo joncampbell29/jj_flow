@@ -39,22 +39,16 @@ The repository is organized as follows:
 
 ### Configuration Files
 - **`config/`**  
-  Configuration files for managing database settings
+  Default database configuration to connect to the database
   - `db_default_config.yaml` — Database configuration settings.
-
----
 
 ### Model Storage
 - **`models/`**  
   Directory to store trained models for inference and evaluation
 
----
-
 ### Exploration Notebooks
 - **`notebooks/`**  
   Notebooks for data exploration, analysis, and experimentation.
-
----
 
 ### Pipelines
 - **`pipelines/`**  
@@ -76,15 +70,11 @@ The repository is organized as follows:
       - `inference.py` — Perform inference on new data.
     - `pipeline.py` — Runs the complete model inference pipeline.
 
----
-
 ### Scripts
 - **`scripts/`**  
   High-level scripts for running pipelines and training models.
   - `run_pipeline.py` — Executes the entire pipeline workflow.
   - `train_models.py` — Trains models using processed data.
-
----
 
 ### Source Code
 - **`src/`**  
@@ -92,12 +82,8 @@ The repository is organized as follows:
   - `data_fetching/` — Functions for fetching data from APIs or other sources.
   - `database/` — Functions for managing database connections and queries.
   - `preprocessing/` — Data preprocessing utilities.
-  - `models/` — Model management and manipulatino utilities.
-  - `utils/`
-    - `env_utils.py` — Handles environment variables and project root utilities.
-    - `date_utils.py` - Handles manipulating dates and datetime objects.
-
----
+  - `models/` — Model management and manipulation utilities.
+  - `utils/` — Miscellaneous utility functions
 
 ### Tests
 - **`tests/`**  
@@ -106,10 +92,10 @@ The repository is organized as follows:
   - `data_pipeline.py` — Tests for data pipeline.
   - `model_pipeline.py` — Tests for model pipeline.
 
----
-
 ### Other Files
-- **`.gitignore`**
-- **`Pipfile`** — Manage project dependencies using Pipenv.
-- **`README.md`** — Project overiew.
+- **`TEMPLATES/`** — Templates for .env files and documenting code for developers.
+- **`Pipfile`** — Project dependency management.
+- **`README.md`**
+- **`Requirements.txt`**
 - **`setup.py`** — Configuration for packaging and installing project modules.
+- **`.gitignore`**
