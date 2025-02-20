@@ -1,6 +1,5 @@
 import psycopg2
 from psycopg2.pool import SimpleConnectionPool
-from .config import get_db_config
 
 class DatabaseManager:
     """
@@ -49,12 +48,9 @@ class DatabaseManager:
         data types, and maximum character lengths.
     """
     
-    def __init__(self, db_config_yaml_path: str=None, db_config: dict=None):
+    def __init__(self, db_config: dict):
         self.pool = None
-        if db_config:
-            self.db_config = db_config
-        else:
-            self.db_config = get_db_config(db_config_yaml_path)
+        self.db_config = db_config
         
     def initiate_pool(self, minconn=1, maxconn=10):
         if not self.pool:

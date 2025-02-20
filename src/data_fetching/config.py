@@ -1,6 +1,4 @@
-from utils.env_utils import _load_root_env
 import os
-# import typing
 
 def get_alpaca_keys(api_key_name:str="ALPACA_PAPER_API_KEY", secret_key_name:str="ALPACA_PAPER_SECRET")-> dict[str, str]:
     """
@@ -18,8 +16,7 @@ def get_alpaca_keys(api_key_name:str="ALPACA_PAPER_API_KEY", secret_key_name:str
     Dict
         A dictionary containing the api and secrete key
     """
-    _load_root_env()
-    
+    # load_root_env()
     credentials_dict = {
         'api_key': os.getenv(api_key_name),
         'secret_key': os.getenv(secret_key_name)

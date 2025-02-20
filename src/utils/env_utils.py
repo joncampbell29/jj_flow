@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-def _get_proj_root()->str:
+def get_proj_root()->str:
     """
     Traverses files and returns the directory where a .env file is found.
     
@@ -23,9 +23,9 @@ def _get_proj_root()->str:
             raise FileNotFoundError(".env file not found in any parent directory")
         cur_path = parent
 
-def _load_root_env()->None:
+def load_root_env()->None:
     """
-    Loads the .env file in the directory found by _get_proj_root()
+    Loads the .env file in the directory found by get_proj_root()
     
     Parameters
     ----------
@@ -35,6 +35,6 @@ def _load_root_env()->None:
     -------
     None
     """
-    proj_root = _get_proj_root()
+    proj_root = get_proj_root()
     env_path = os.path.join(proj_root,".env")
     load_dotenv(dotenv_path=env_path)

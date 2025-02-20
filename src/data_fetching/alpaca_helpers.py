@@ -2,7 +2,7 @@ from .config import get_alpaca_keys
 from datetime import datetime, timedelta
 from alpaca.data import StockHistoricalDataClient, StockBarsRequest
 from alpaca.data.timeframe import TimeFrame
-from ..utils.date_utils import check_date, safe_convert_date
+from utils.date_utils import check_date, safe_convert_date
 
 
 def retrieve_historical_prices(

@@ -3,7 +3,6 @@ pandas
 psycopg2
 requests
 yfinance
-pyyaml
 scikit-learn
 python-dotenv
 fredapi

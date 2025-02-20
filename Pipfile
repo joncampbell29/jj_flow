@@ -14,7 +14,6 @@ fredapi = "*"
 alpaca-py = "*"
 yfinance = "*"
 psycopg2 = "*"
-pyyaml = "*"
 jjflow-utils = {file = ".", editable = true}
 
 [dev-packages]
