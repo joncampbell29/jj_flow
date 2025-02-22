@@ -1,0 +1,21 @@
+
+filepath i.e. CIK000038753.json
+cik i.e. 000038753
+name
+tickers
+exchanges
+ein
+description
+website
+investorWebsite
+category
+fiscalYearEnd
+stateOfIncorporation
+entityType
+sic
+sicDescription
+ownderOrg
+stateorcountry_mailing i.e. MI
+stateorcountry_business i.e. CA
+phone
+formerNames
