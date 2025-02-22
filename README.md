@@ -22,7 +22,7 @@ The project is divided into two main pipelines:
 
 ## External sources and usage:
 - EDGAR: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
-  - Company facts and SEC filings
+  - Company facts and SEC filings; Latest download 2/21/2025
 - Alpaca Market Data API: https://docs.alpaca.markets/docs/about-market-data-api
   - Historical stock price data
   - (maybe some other things from other endpoints)
@@ -36,11 +36,6 @@ The repository is organized as follows:
 ### Project Root
 
 ---
-
-### Configuration Files
-- **`config/`**  
-  Default database configuration to connect to the database
-  - `db_default_config.yaml` — Database configuration settings.
 
 ### Model Storage
 - **`models/`**  
@@ -85,15 +80,7 @@ The repository is organized as follows:
   - `models/` — Model management and manipulation utilities.
   - `utils/` — Miscellaneous utility functions
 
-### Tests
-- **`tests/`**  
-  Unit tests:
-  - `db_tests.py` — Tests for database functionality.
-  - `data_pipeline.py` — Tests for data pipeline.
-  - `model_pipeline.py` — Tests for model pipeline.
-
 ### Other Files
-- **`TEMPLATES/`** — Templates for .env files and documenting code for developers.
 - **`Pipfile`** — Project dependency management.
 - **`README.md`**
 - **`Requirements.txt`**
