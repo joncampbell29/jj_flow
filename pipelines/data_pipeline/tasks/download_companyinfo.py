@@ -3,12 +3,13 @@ import pandas as pd
 import numpy as np
 import os
 from pathlib import Path
-from data_fetching.edgar_helpers import parse_companyfact_dict, extract_data
+from data_fetching.edgar_helpers import parse_companyfact_dict, extract_data_parallel
 from utils.logging_utils import setup_logging
 
 def fetch_companyfacts(user_agent, logger):
-    SEC_URL = 'https://www.sec.gov/Archives/edgar/daily-index/xbrl/companyfacts.zip'
-    LOCAL_PATH = Path('data/companyfacts.zip')
+    
+    SEC_URL = 'https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip'
+    LOCAL_PATH = Path('data/submissions.zip')
     
     def check_local_file():
         if LOCAL_PATH.exists():
@@ -56,16 +57,16 @@ def main():
     
     if source is not None:
         try:
-            data_list = extract_data(source, logger, extraction_dir='data/')
+            data_list = extract_data_parallel(source, logger, extraction_dir='data/') ### Takes forever
             if data_list:
                 df = pd.DataFrame(data_list)
                 
-                # output_path = Path('data/companyfacts.csv')
-                # df.to_csv(output_path, index=False)
-                # logger.info(f"Data saved to {output_path}")
-                parquet_path = Path('data/companyfacts.parquet')
-                df.to_parquet(parquet_path, index=False)
-                logger.info(f"Data saved to {parquet_path}")
+                output_path = Path('data/companyfacts.csv')
+                df.to_csv(output_path, index=False)
+                logger.info(f"Data saved to {output_path}; {df.shape} shape")
+                # parquet_path = Path('data/companyfacts.parquet')
+                # df.to_parquet(parquet_path, index=False)
+                # logger.info(f"Data saved to {parquet_path}")
                 
                 # return df
             else:
