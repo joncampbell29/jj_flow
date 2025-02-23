@@ -1,5 +1,6 @@
 import os
 
+
 def get_alpaca_keys(api_key_name:str="ALPACA_PAPER_API_KEY", secret_key_name:str="ALPACA_PAPER_SECRET")-> dict[str, str]:
     """
     Get Alpaca API keys from .env file.
