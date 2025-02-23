@@ -10,3 +10,4 @@ alpaca-py
 bs4
 python-dotenv
 PyYAML
+pyarrow
