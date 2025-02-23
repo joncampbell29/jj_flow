@@ -2,7 +2,7 @@ import logging
 import logging.config
 import yaml
 
-def setup_logging(logger_name='data_pipeline'):
+def setup_logging(logger_name):
     try:
         with open('config/logging_config.yaml', 'r') as fil:
             config = yaml.safe_load(fil)

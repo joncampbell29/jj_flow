@@ -18,8 +18,8 @@ def fetch_companyfacts(user_agent, logger):
         return None
 
     while True:
-        fetch_online = input("Fetch online (y/n): ").lower()
-        if fetch_online in ('y', 'n'):
+        fetch_online = input("Fetch online (y/n/stop): ").lower()
+        if fetch_online in ('y', 'n', 'stop'):
             break
         print("Please enter 'y' or 'n'")
 
@@ -43,11 +43,12 @@ def fetch_companyfacts(user_agent, logger):
         except requests.exceptions.RequestException as e:
             logger.error(f"Request failed: {e}")
             return check_local_file()
-    
+    elif fetch_online == 'stop':
+        return None
     return check_local_file()
 
 def main():
-    logger = setup_logging()
+    logger = setup_logging("data_pipeline")
     user_agent = 'MyCompanyName (myemail@example.com)'
     
     os.makedirs('data', exist_ok=True)
