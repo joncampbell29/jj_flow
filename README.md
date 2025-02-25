@@ -1,6 +1,6 @@
 # JJ Flow
 
-This project implements a robust two-pipeline system designed to streamline financial data ingestion, storage, and predictive modeling for making informed investment decisions. The repository includes utilities and scripts for managing the entire workflow, from fetching external data to generating predictions.
+This project implements a two-pipeline system designed to streamline financial data gathing, storing, and predictive modeling for making informed investment decisions. The repository includes utilities and scripts for managing the entire workflow, from fetching external data to generating predictions.
 
 ---
 
@@ -26,6 +26,8 @@ The project is divided into two main pipelines:
 - Alpaca Market Data API: https://docs.alpaca.markets/docs/about-market-data-api
   - Historical stock price data
   - (maybe some other things from other endpoints)
+- yfinance
+  - (maybe)
 
 ---
 

@@ -25,16 +25,24 @@ FIELD_TRANSFORMS = {
     }
 
 def format_addy_dict(addy_dict):
-        parts = [
+        # parts = [
+        #     addy_dict.get('street1'),
+        #     addy_dict.get('street2'),
+        #     addy_dict.get('city'),
+        #     addy_dict.get('stateOrCountry'),
+        #     addy_dict.get('zipCode')
+        #     ]
+        parts = filter(None, (
             addy_dict.get('street1'),
-            addy_dict.get('street2'),
+            addy_dict.get('street2'), 
             addy_dict.get('city'),
             addy_dict.get('stateOrCountry'),
             addy_dict.get('zipCode')
-            ]
+        ))
+        return ", ".join(parts)
         # parts = [part for part in parts if part]
         # return ', '.join(parts) if len(parts) != 0 else None
-        return ', '.join(part for part in parts if part)
+        # return ', '.join(part for part in parts if part)
     
 def parse_addresses(address_val):
     return_dict = {
